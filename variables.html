@@ -8,11 +8,19 @@
         </script>
         <!--adv2-->
         <button onclick="getChar()">Get First Char</button>
-        <br>
+        <br><br>
         <!--adv5-->
-        <textarea></textarea>
+        Enter text
+        <textarea id="text"></textarea>&nbsp;
+        Enter word to search &nbsp;
+        <textarea id="word"></textarea> &nbsp;
+        <button onclick="searchWord()">Search Word</button>
+        <!--adv6-->
         <br>
-        <textarea></textarea> <button onclick="searchWord()"></button>
-
+        <textarea id="textarea"></textarea> &nbsp;
+        Replace word <textarea id="replaceWord"></textarea> with <textarea id="replaceWith"></textarea> &nbsp;
+        <button onclick="replaceWord()">Replace</button>
+        <br>
+        <p id="result"></p>
     </body>
 </html>
