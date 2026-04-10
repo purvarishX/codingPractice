@@ -53,6 +53,21 @@
             var className = document.getElementById('txtClass').value;
             document.getElementById('myDiv').classList.add(className);
         }
+
+        var clicked = true;
+
+        changeBgColor = () => {
+            clicked = !clicked;
+
+            if (clicked) {
+                document.getElementById('div3').classList.remove("bg-warning");
+                document.getElementById('div3').classList.add("bg-danger");
+            } else {
+                document.getElementById('div3').classList.add("bg-warning");
+                document.getElementById('div3').classList.remove("bg-danger");
+            }
+
+        }
     </script>
 
     <div>
@@ -84,9 +99,10 @@
                 <div class="col-3 p-4 bg-warning" id="div3">
                     Div 3
                 </div>
-                <div class="col-3">
+                <div class="col-6">
                     <input type="text" placeholder="width" oninput="changeWidth(event)">
                     <input type="text" placeholder="height" oninput="changeHeight(event)">
+                    <button class="btn btn-success" onclick="changeBgColor()">Change Color</button>
                 </div>
             </div>
             <br>
