@@ -12,7 +12,9 @@ function onCityChange() {
 
 function clickButton(event, language) {
     alert(language);
+    console.log(event, "Event");
     console.log(event.target, "Event");
+    console.log(event.target.innerText, ":InnerText");
 }
 
 function onMouseEnterDiv() {
@@ -33,4 +35,9 @@ function onPageScroll() {
 
 function resizeLog() {
     console.log('Rezise page');
+}
+
+//to get mouse position where it is click event
+function getPosition(event) {
+    console.log(event.clientX, event.clientY);
 }
