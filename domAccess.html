@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>JS Test</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+
+</head>
+
+<body>
+    <script>
+        readInput = function () {
+            var name = document.getElementById('txtInput').value;
+            alert("INPUT : " + name);
+        }
+
+        setInput = function () {
+            document.getElementById('txtInput').value = 'Purvashree';
+        }
+
+        readState = function () {
+            var state = document.getElementById('dpdl').value;
+            alert("State: " + state);
+        }
+
+        readCheckbox = function () {
+            var check = document.getElementById('checkBoxId').checked;
+            alert('Checkbox is: ' + check);
+        }
+
+        readRadio = function () {
+            var gender = document.querySelector("input[name='radioGender']:checked");
+            alert('Gender is: ' + gender.value);
+        }
+
+        readText = function () {
+            var textArr = document.getElementsByClassName('textarea');
+            alert(textArr[0].value)
+            alert(textArr[1].value)
+            console.log("Read text, by classname: ", textArr);
+            console.log("Read text, by classname: ", textArr[0].value);
+            console.log("Read text, by classname: ", textArr[1].value);
+
+        }
+
+        readTextQuery = function () {
+            var textClass = document.querySelector("input[class='textareaClass']");
+            console.log("CLASS input: ", textClass.value)
+
+            var textClassArr = document.querySelectorAll("input[class='textareaClass']");
+            console.log("CLASS querySelectorAll: ", textClassArr)
+            console.log("Class querySelectorAll arr 0: ", textClassArr[0].value)
+            console.log("Class querySelectorAll arr 1: ", textClassArr[1].value)
+
+            var textClassArr1 = document.querySelectorAll(".textareaClass");
+            console.log("Arr: querySelectorAll ", textClassArr1);
+            console.log("Arr: querySelectorAll ", textClassArr1[0].value);
+            console.log("Arr: querySelectorAll ", textClassArr1[1].value);
+        }
+
+        readPara = function () {
+            alert(document.getElementById('para').innerText);
+            alert(document.getElementById('myDiv').innerHTML);
+            console.log("MY DIV children Array: ", document.getElementById('myDiv').children);
+        }
+
+        setPara = function () {
+            document.getElementById('para').innerText = '';
+            document.getElementById('para').innerText = 'This is my new Paragraph text content.'
+        }
+    </script>
+
+    <div>
+        <div class="row">
+            <div class="col-2">
+                <input class="form-control" id="txtInput" type="text">
+            </div>
+            <div class="col-2">
+                <button onclick="readInput()" class="btn bg-warning">Read Input</button>
+            </div>
+            <div class="col-2">
+                <button onclick="setInput()" class="btn bg-warning">Set Input</button>
+            </div>
+        </div>
+
+        <br>
+
+        <div class="row">
+            <div class="col-2">
+                <select id="dpdl">
+                    <option>Rajasthan</option>
+                    <option>Maharashtra</option>
+                    <option value="PB">Punjab</option>
+                    <option value="OR">Orissa</option>
+                    <!--Note is value is present, we will get that in document.getElementById. If not present then we will get the text.-->
+                </select>
+            </div>
+            <div class="col-2">
+                <button onclick="readState()" class="btn btn-warning">Read State</button>
+            </div>
+        </div>
+
+        <br>
+
+        <div class="row">
+            <div class="col-2">
+                <input type="checkbox" id="checkBoxId">
+            </div>
+            <div class="col-2">
+                <button onclick="readCheckbox()" class="btn btn-warning">Checkbox Click</button>
+            </div>
+        </div>
+
+        <br>
+
+        <div class="row">
+            <div class="col-2">
+                <input type="radio" value="male" name="radioGender">Male
+                <input type="radio" value="female" name="radioGender">Female
+            </div>
+            <div class="col-2">
+                <button onclick="readRadio()" class="btn btn-warning">Read Gender</button>
+            </div>
+        </div>
+
+        <br>
+
+        <div class="row">
+            <div class="col-2">
+                <input type="text" class="textarea">
+                <br>
+                <input type="text" class="textarea">
+            </div>
+            <div class="col-2">
+                <button onclick="readText()" class="btn btn-warning">Read Text</button>
+            </div>
+        </div>
+
+        <br>
+
+        <div class="row">
+            <div class="col-2">
+                <input type="text" class="textareaClass" placeholder="Enter text">
+                <br>
+                <input type="text" class="textareaClass" placeholder="Enter text">
+            </div>
+            <div class="col-2">
+                <button onclick="readTextQuery()" class="btn btn-warning">Read Text</button>
+            </div>
+        </div>
+
+        <br>
+        <div id="myDiv">
+            <p id="para">This is Paragraph <span>It is text</span></p>
+            <button class="btn btn-success" onclick="readPara()">Read Para</button>
+            <button class="btn btn-success" onclick="setPara()">Set Para</button>
+        </div>
+
+    </div>
+
+    <script src="domAccess.js"></script>
+
+</body>
+
+</html>
